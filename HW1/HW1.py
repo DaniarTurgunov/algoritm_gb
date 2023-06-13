@@ -8,7 +8,7 @@ def change(arr, n, i):
         temp = l
     if r < n and arr[temp] < arr[r]:
         temp = r
-    if max != i:
+    if temp != i:
         arr[i], arr[temp] = arr[temp],arr[i] 
         change(arr, n, temp)
 
