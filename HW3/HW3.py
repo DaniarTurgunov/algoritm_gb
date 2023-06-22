@@ -1,6 +1,6 @@
 import random
 
-class RBNode:
+class Node:
     def __init__(self, val):
         self.red = False
         self.parent = None
@@ -8,16 +8,16 @@ class RBNode:
         self.left = None
         self.right = None
 
-class RBTree:
+class Tree:
     def __init__(self):
-        self.nil = RBNode(0)
+        self.nil = Node(0)
         self.nil.red = False
         self.nil.left = None
         self.nil.right = None
         self.root = self.nil
 
     def insert(self, val):
-        new_node = RBNode(val)
+        new_node = Node(val)
         new_node.parent = None
         new_node.left = self.nil
         new_node.right = self.nil
@@ -129,15 +129,14 @@ def print_tree(node, lines, level=0):
 def get_nums(num):
     random.seed(1)
     nums = []
-    for _ in range(num):
+    for i in range(num):
         nums.append(random.randint(1, num-1))
     return nums
 
 def main():
-    tree = RBTree()
+    rbtree = Tree()
     for x in range(1, 11):
-        tree.insert(x)
-    print(tree)
-
-
+        rbtree.insert(x)
+    print(rbtree)
+    
 main()
